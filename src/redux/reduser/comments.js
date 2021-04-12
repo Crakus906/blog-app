@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
     COMMENTS_REJECT,
-    COMMENTS_REQUEST,
-    COMMENTS_RESPONSE
+    COMMENTS_RESPONSE,
+    CREATE_COMMENT_ACTION
 } from '../action/comments';
 
 
@@ -12,20 +12,14 @@ const initState = {
 
 export default (state = initState, { type, payload }) => {
     switch (type) {
-        case COMMENTS_REQUEST:
-            return {
-                ...state,
-                comments: [],
-            };
         case COMMENTS_RESPONSE:
             return {
-                ...state,
-                comments: payload,
+                ...payload,
             };
-        case COMMENTS_REJECT:
+        case CREATE_COMMENT_ACTION:
             return {
                 ...state,
-                comments: [],
+                comments: [...state.comments, payload],
             };
       default:
         return state;

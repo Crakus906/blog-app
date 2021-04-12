@@ -31,7 +31,7 @@ export default function PostDetail() {
     const handleSubmit = (values) => {
         const value = {
             body: values.body,
-            postId: commentsAll === undefined ? 0 : commentsAll[commentsAll.length - 1].postId + 1
+            postId: commentsAll === undefined ? 0 : commentsAll.length+ 1
         }
         dispatch(createComment(value ,id))
     };

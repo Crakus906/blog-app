@@ -15,7 +15,7 @@ export default function Wrapper(props) {
     <HeaderWrapper>
       <Layout className="layout">
       <Header>
-        <Link><div className='logo'>Blog</div></Link>
+        <Link to='/'><div className='logo'>Blog</div></Link>
       </Header>
       <Content style={{ padding: '0 50px' }}>
           {children}
